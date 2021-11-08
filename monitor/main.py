@@ -16,6 +16,17 @@ def valida(a,b):
     else:
         return 'Fail'
 
+def positive_negative(a, b):
+    process_Sum = calculation_suma(a,b)
+    # process_Mul = calculation_multiplicacion(a,b)
+    if process_Sum > 0:
+        return 'positive'
+    elif process_Sum < 0:
+        return 'negative'
+    else:
+        return 'neutro'
+
+
 def make_a_dict_suma(a, b):
     operation = calculation_suma(a,b)
     return {"a": a, "b": b, "result": operation}

@@ -93,7 +93,6 @@ def test_calculation_suma_param_array(numberA, numberB, expected):
     assert process == expected_result
 
 # Prueba de integracion para la funcion de valida
-# Enviando 2 arrays al parametrize para que sea dinamico
 # Combinando 2mock y parametrize
 # En este caso un test fallo, al probar 0, 0, 0, la validacion de la funcion valida tomaba 0 como un valor que no existia y daba un resultado diferente al esperado
 # Se agrego a la linea de codigo 14 or process_Sum == 0 and process_Mul == 0: y ahora sale correcto el test
