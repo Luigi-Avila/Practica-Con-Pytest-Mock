@@ -5,13 +5,13 @@ from monitor import main
 
 #Prueba unitaria para la funcion de calculation_suma
 #Particion de equivalencia
-# numeros de entrada y salida positivos, negativos ceros y decimales
+# Corregir centrado en el valor de retorno y hacerlo modular
 numerosArraySumaExpected = [
-    (2, -1, 1),
-    (-1, 0, -1),
+    (1, 1, 2),
+    (-1, -1, -2),
     (0, 0, 0),
-    (1, -0.9, 0.1),
-    (-0.8, -0.1, -0.9)
+    (0.1, 0.1, 0.2),
+    (-0.1, -0.1, -0.2)
 ]
 @pytest.mark.parametrize("numberA, numberB, expected", numerosArraySumaExpected)
 def test_calculation_suma(numberA, numberB, expected):
@@ -21,13 +21,13 @@ def test_calculation_suma(numberA, numberB, expected):
 
 #Prueba unitaria para la funcion de calculation_resta
 #Particion de equivalencia
-#Numeros de entrada y salida positivos, negativos, ceros y decimales
+# Corregir centrado en el valor de retorno y hacerlo modular
 numerosArrayRestaExpected = [
-    (1, -1, 2),
-    (-1, 0, -1),
+    (2, 1, 1),
+    (-2, -1, -1),
     (0, 0, 0),
-    (0.8, -0.1, 0.9),
-    (-0.8, 0.1, -0.9)
+    (0.2, 0.1, 0.1),
+    (-0.2, -0.1, -0.1)
 ]
 @pytest.mark.parametrize("numberA, numberB, expected", numerosArrayRestaExpected)
 def test_calculation_resta(numberA, numberB, expected):
@@ -37,12 +37,13 @@ def test_calculation_resta(numberA, numberB, expected):
 
 #Prueba unitaria para la funcion de calculation_multiplication
 #Particion de equivalencia
-#Numeros de entrada y salida positivos, negativos, ceros y decimales
+# Corregir centrado en el valor de retorno y hacerlo modular
 numerosArrayMultiExpected = [
-    (1, -1, -1),
-    (-2, 0, 0),
-    (1, 1, 1),
-    (0.9, -0.1, -0.09)
+    (1, 2, 2),
+    (1, -2, -2),
+    (0, 0, 0),
+    (0.1, 0.2, 0.02),
+    (0.1, -0.2, -0.02)
 ]
 @pytest.mark.parametrize("numberA, numberB, expected", numerosArrayMultiExpected)
 def test_calculation_multiplicacion(numberA, numberB, expected):
@@ -51,7 +52,7 @@ def test_calculation_multiplicacion(numberA, numberB, expected):
     assert process == expected_result
 
 # Pruebas de integracion para la funcion de valida
-
+#Pruebas que no hay que complementar
 numerosArrayValidaExpected = [
     (1, 1, 1, 'success'),
     (' ', ' ', ' ', 'Fail'),
@@ -67,6 +68,7 @@ def test_valida(numberA, numberB, value, expected):
 
 # Prueba de integracion para la funcion positive_negative
 # Particion de equivalencia y analisis de valores limite
+# Pruebas que no hay que complementar
 numerosArraySumPos_negativeExpected = [
     (0, 0.1, 0.1, 'positive'),
     (0, 0, 0, 'neutro'),
